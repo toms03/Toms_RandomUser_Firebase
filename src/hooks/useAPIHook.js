@@ -8,7 +8,7 @@ export default function useAPi(url) {
   React.useEffect(() => {
     setIsLoading(true)
     getData()
-  }, [])
+  }, [url])
 
   const getData = async () => {
     const response = await axios.get(url)
