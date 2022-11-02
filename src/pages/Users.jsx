@@ -1,6 +1,6 @@
-import Table from './Table';
-import useAPI from './useAPIHook'
-import Pagination from './Pagination';
+import Table from '../components/Table';
+import useAPI from '../hooks/useAPIHook'
+import Pagination from '../components/Pagination';
 import { useState, useMemo } from 'react';
 const URL = 'https://randomuser.me/api/?results=100';
 let PageSize = 10;

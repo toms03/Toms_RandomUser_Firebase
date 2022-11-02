@@ -1,5 +1,6 @@
 import './NotFound.css'
-import Button from './Button'
+import Button from '../components/Button'
+
 export default function NotFound() {
 		const image = 'http://i.giphy.com/l117HrgEinjIA.gif';
 
