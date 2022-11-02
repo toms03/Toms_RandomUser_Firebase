@@ -1,10 +1,20 @@
 import { googleSignin, googleSignout } from '../utils/auth'
+import {useState} from "react"
 
 export default function AuthPage() {
+  const [users, setUsers] = useState(null)
+
   return (
     <main>
-      <button onClick={googleSignin}>Google Signin</button>
-      <button onClick={googleSignout}>Google Signout</button>
+      {users ? <button onClick={()=>{
+      googleSignout()
+      setUsers(null)
+    }}>Google Signout</button>
+      : <button onClick={()=>{
+      const user = googleSignin()
+      if (user) setUsers(user);
+      else setUsers(null)
+    }}>Google Sign-in</button>}
     </main>
   )
 }

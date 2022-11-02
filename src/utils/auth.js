@@ -8,7 +8,7 @@ const auth = getAuth();
 auth.languageCode = 'en';
 
 export function googleSignin() {
-  signInWithPopup(auth, provider)
+  return signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -16,6 +16,7 @@ export function googleSignin() {
       // The signed-in user info.
       const user = result.user;
       console.log(token, user)
+      return user
       // ...
     }).catch((error) => {
       // Handle Errors here.
